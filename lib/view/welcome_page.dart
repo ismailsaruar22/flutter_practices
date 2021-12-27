@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mentor_app/custom_widget/background.dart';
+import 'package:mentor_app/custom_widget/custom_button.dart';
+import 'package:mentor_app/custom_widget/my_theme.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -11,19 +13,44 @@ class WelcomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Background(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "welcome to Mentor app",
-              style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.green.shade900),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "WELCOME TO MENTOR APP",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.green.shade900),
+              ),
+              Image.asset(
+                "images/undraw_Balloons.png",
+                width: size.width * 0.6,
+              ),
+              CustomButton(
+                buttonColor: MyTheme.LogInButtonColor,
+                buttonText: "Log In",
+                textColor: Colors.white,
+                handleButtonClick: logInButtonClickHandler,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                buttonColor: MyTheme.SignUpButtonColor,
+                buttonText: "Sign Up",
+                textColor: Colors.white,
+                handleButtonClick: SignUpButtonClickHandler,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  logInButtonClickHandler() {}
+
+  SignUpButtonClickHandler() {}
 }
