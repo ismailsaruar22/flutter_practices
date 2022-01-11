@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
   static Color LogInButtonColor = Colors.purple.shade900;
-  static Color SignUpButtonColor = Colors.green.shade900;
+  static Color SignUpButtonColor = Colors.grey.shade900;
 
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       canvasColor: Colors.white,
       fontFamily: GoogleFonts.poppins().fontFamily,
       colorScheme: ColorScheme(
-          primary: Colors.black,
+          primary: Colors.white70,
           primaryVariant: Colors.black87,
           secondary: Colors.black87,
           secondaryVariant: Colors.black87,

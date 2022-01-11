@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mentor_app/custom_widget/background.dart';
 import 'package:mentor_app/custom_widget/custom_button.dart';
 import 'package:mentor_app/custom_widget/my_theme.dart';
+import 'package:mentor_app/view/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class WelcomePage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w900,
-                    color: Colors.green.shade900),
+                    color: Theme.of(context).colorScheme.primaryVariant),
               ),
               Image.asset(
                 "images/undraw_Balloons.png",
@@ -31,8 +32,10 @@ class WelcomePage extends StatelessWidget {
               CustomButton(
                 buttonColor: MyTheme.LogInButtonColor,
                 buttonText: "Log In",
-                textColor: Colors.white,
-                handleButtonClick: logInButtonClickHandler,
+                textColor: Theme.of(context).colorScheme.primary,
+                handleButtonClick: () {
+                  logInButtonClickHandler(context);
+                },
               ),
               SizedBox(
                 height: 20,
@@ -40,8 +43,8 @@ class WelcomePage extends StatelessWidget {
               CustomButton(
                 buttonColor: MyTheme.SignUpButtonColor,
                 buttonText: "Sign Up",
-                textColor: Colors.white,
-                handleButtonClick: SignUpButtonClickHandler,
+                textColor: Theme.of(context).colorScheme.primary,
+                handleButtonClick: signUpButtonClickHandler,
               ),
             ],
           ),
@@ -50,7 +53,10 @@ class WelcomePage extends StatelessWidget {
     );
   }
 
-  logInButtonClickHandler() {}
+  logInButtonClickHandler(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (builder) => LogInPage()));
+  }
 
-  SignUpButtonClickHandler() {}
+  signUpButtonClickHandler() {}
 }

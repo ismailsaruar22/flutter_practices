@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor_app/custom_widget/my_theme.dart';
 
+import 'custom_widget/my_theme.dart';
 import 'view/welcome_page.dart';
 
 void main(List<String> args) {
